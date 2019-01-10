@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Receipt</title>
+		<style>
+			.orderId{
+				text-align:center;
+				
+			}
+			.orderId h2{
+				color:#aaa;
+			}
+			tr,td,th{
+				border: solid 0.5px #ccc;
+				padding:5px;
+			}
+			.receipt{
+				text-align:center;
+			}
+			h2{
+				text-weight:1px;
+			
+			}
+			.total{
+				text-align:right;
+				margin-top:20px;
+			}
+		</style>
+	</head>
+	<body>
+		<h4 class="receipt">------------------- &nbsp;&nbsp; Receipt &nbsp;&nbsp;  --------------------</h4>
+		
+		<div class="orderId">
+			<h2>OrderId: {orderData.id}</h2>
+			</div>
+			<div>
+		<table style="width:100%;text-align:center" border="0">
+			
+  <tr>
+    <th>Title</th>
+    <th>price</th> 
+    <th>Quantity</th>
+  </tr>
+		{items}  
+  </table>
+		
+		</div>
+		<div class="total">subtotal: {orderData.subtotal} <br>
+											delivery cost: {orderData.deliveryCost}<br>
+												total: {orderData.total}	
+		</div>
+		
+	</body>
+	
+</html>

@@ -1,6 +1,0 @@
-curl https://api.stripe.com/v1/charges \
-  -u sk_test_WMWPRkuDOPMuzEvL2D1I6KRL: \
-  -d amount=2000 \
-  -d currency=usd \
-  -d source=tok_amex \
-  -d description="Charge for jenny.rosen@example.com"
