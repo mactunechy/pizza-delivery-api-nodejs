@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  	<base href="{globals.baseUrl}" >
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <title>
+    {globals.appName} | {head.title}
+  </title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <!-- Nucleo Icons -->
+  <link href="public/assets/css/nucleo-icons.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link href="public/assets/css/blk-design-system.css" rel="stylesheet" />
+  
+  <link href="public/assets/css/master.css" rel="stylesheet" />
+</head>
+
+<body class="index-page">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="100">
+    <div class="container">
+      <div class="navbar-translate">
+        <a class="navbar-brand" href="/" rel="tooltip" title="order a meal and it will be deilvery to you" data-placement="bottom" >
+          <span>{globals.appName}</span> Food Delivery
+        </a>
+        <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-bar bar1"></span>
+          <span class="navbar-toggler-bar bar2"></span>
+          <span class="navbar-toggler-bar bar3"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse justify-content-end" id="navigation">
+        <div class="navbar-collapse-header">
+          <div class="row">
+            <div class="col-6 collapse-brand">
+              <a>
+                {globals.appName}
+              </a>
+            </div>
+            <div class="col-6 collapse-close text-right">
+              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="tim-icons icon-simple-remove"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <ul class="navbar-nav">
+          <li id="meals" class="nav-item p-0">
+            <a class="nav-link" rel="tooltip" title="meals" data-placement="bottom" href="meals/list" >
+              
+              <p class="d-lg-none d-xl-none">Meals</p>
+            </a>
+          </li>
+          <li id="cart" class="nav-item p-0" style="display:none">
+            <button id="cart-btn" class="ml-1 nav-link btn-link" rel="tooltip" title="cart" data-placement="bottom" data-toggle="modal" data-target="#myModal1">
+              
+              <p class="d-lg-none d-xl-none">Cart</p>
+            </button>
+          </li>
+                    <li id="signup" class="nav-item p-0" style="display:none">
+            <a class="nav-link" rel="tooltip" title="join us" data-placement="bottom" href="account/create">
+             
+              <p class="d-lg-none d-xl-none">Signup</p>
+            </a>
+          </li>
+          <li id="accountSettings" class="nav-item p-0" style="display:none">
+            <a class="nav-link" rel="tooltip" title="go to settings" data-placement="bottom" href="account/settings">
+              
+              <p class="d-lg-none d-xl-none">Account Settings </p>
+            </a>
+          </li>
+          <li id="logout" class="nav-item p-0" style="display:none">
+            <button class="nav-link btn-link" rel="tooltip" title="going somewhere? " data-placement="bottom">
+              
+              <p class="d-lg-none d-xl-none">Logout </p>
+            </button>
+          </li>
+          <li id="login" class="nav-item p-0" style="display:none">
+            <a class="nav-link" rel="tooltip" title="login" data-placement="bottom" href="account/login" >
+              
+              <p class="d-lg-none d-xl-none">Login</p>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navbar -->
+  <div class="wrapper">
+        <div class="main">
+      
+      
+      <!-- Cart modal content -->
+     <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header justify-content-center">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                <i class="tim-icons icon-simple-remove"></i>
+              </button>
+              <h4 class="title title-up">Shopping Cart</h4>
+            </div>
+            <div class="modal-body table-responsive">
+           
+           <table class="table tablesorter " id="plain-table">
+                        <thead class="text-center">
+                          <tr>
+                            <th class="header text-dark">
+                              title
+                            </th>
+                            <th class="header text-dark">
+                              price
+                            </th>
+                            <th class="header text-dark">
+                              quantity
+                            </th>
+                            <th class="header text-dark">
+                              add/remove
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                      </table>
+                    </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default"  data-dismiss="modal">close</button>
+              <button id="checkout" type="button" class="btn btn-danger text-white">Checkout</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  End Modal -->
+      
+      
+      
+      
+      

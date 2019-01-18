@@ -1,0 +1,37 @@
+<div class="container-fluid row justify-content-center mt-4">
+  <div class=" mt-4 col-md-5 mt-4">
+          <h3 class="h1-seo mt-4 text-center">{body.title}</h3>
+          <div class="card-body">
+          	       <form id="sessionCreate" class="form" method="POST" action="api/tokens">
+          	       <div id="formError" style="display:none" class="alert alert-warning alert-with-icon">
+            <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+              <i class="tim-icons icon-simple-remove"></i>
+            </button>
+            <span data-notify="icon" class="tim-icons icon-bulb-63"></span>
+            <span id="errorField"></span>
+          </div>
+
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="fa fa-envelope-o"></i>
+                        </div>
+                      </div>
+                      <input name="email" type="email" placeholder="Email" class="form-control">
+                    </div>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="fa fa-lock"></i>
+                        </div>
+                      </div>
+                      <input name="password" type="password" class="form-control" placeholder="Password">
+                    </div>
+                                        
+                    <input type="submit" class="btn btn-primary mt-3 btn-block" value="Login">
+                  </form>
+                </div>
+
+        
+      </div>
+    </div>

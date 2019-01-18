@@ -1,0 +1,71 @@
+
+</div>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <h3 class="title">{globals.appName}</h3>
+          </div>
+          <div class="col-md-6 justify-content-center">
+            <ul class="nav">
+              <li class="nav-item">
+                <a href="/" class="nav-link">
+                  Home
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="account/settings" class="nav-link">
+                  account settings
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="account/create" class="nav-link">
+                  Register
+                </a>
+              </li>
+             </ul>
+          </div>
+          <div class="col-md-3">
+          	<p >{globals.companyName} | All Rights Reserved </p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!--   Core JS Files   -->
+  <script src="public/assets/js/core/jquery.min.js" type="text/javascript"></script>
+  <script src="public/assets/js/core/popper.min.js" type="text/javascript"></script>
+  <script src="public/assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+  <script src="public/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+  <script src="public/assets/js/plugins/bootstrap-switch.js"></script>
+  <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+  <script src="public/assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+  <!-- Chart JS -->
+  <script src="public/assets/js/plugins/chartjs.min.js"></script>
+  <!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
+  <script src="public/assets/js/plugins/moment.min.js"></script>
+  <script src="public/assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+  <!-- Front-end logic for the application -->
+  <script  src="public/assets/js/master.js" type="text/javascript" ></script>
+  <!-- Control Center for Black UI Kit: parallax effects, scripts for the example pages etc -->
+  <script src="public/assets/js/blk-design-system.min.js" type="text/javascript"></script>
+  <script>
+    $(document).ready(function() {
+      blackKit.initDatePicker();
+      blackKit.initSliders();
+    });
+
+    function scrollToDownload() {
+
+      if ($('.section-download').length != 0) {
+        $("html, body").animate({
+          scrollTop: $('.section-download').offset().top
+        }, 1000);
+      }
+    }
+  </script>
+</body>
+
+</html>

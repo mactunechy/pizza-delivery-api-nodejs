@@ -1,0 +1,31 @@
+
+<div class="row justify-content-center mt-4 pt-4">
+	<h3 class=" col-6 mt-4"><span>{body.title}<hr class="line-success"></span></h3>
+	
+</div>
+
+<div class="row justify-content-center">
+	<div class="col-6 col-md-5 text-center">
+		<h4>subtotal: <span class="text-danger">${subtotal}</span></h4>
+		<h4>delivery: <span class="text-danger">${deliveryCost}</span></h4>
+		<h4>total: <span class="text-danger">${total}</span></h4>
+		<form id="payment" method="POST" action="api/checkout" class="form-group row">
+			<div id="formError" style="display:none" class="alert alert-warning alert-with-icon">
+            <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+              <i class="tim-icons icon-simple-remove"></i>
+            </button>
+            <span data-notify="icon" class="tim-icons icon-bulb-63"></span>
+            <span id="errorField"></span>
+          </div>
+
+			<input type="text" placeholder="43240 4234 ..." class="form-group-item form-control col-12">
+				<br><br>
+<input type="text" placeholder="09/23" class="mr-1  form-group-item form-control col-2">
+	
+	<input type="text" placeholder="CVV" class=" ml-1form-group-item form-control col-2">
+		<br><br>
+			<input type="hidden" name="stripeToken" value="tok_visa">
+			<input type="hidden" name="orderId" value="{id}">
+		<input type="submit" value="pay" class=" btn btn-block btn-primary col-12">		</form>
+	</div>
+</div>
