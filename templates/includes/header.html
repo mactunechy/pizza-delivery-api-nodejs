@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   	<base href="{globals.baseUrl}" >
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon">
   <title>
     {globals.appName} | {head.title}
   </title>
@@ -50,6 +50,13 @@
           </div>
         </div>
         <ul class="navbar-nav">
+          <li style="display:none" id="admin-panel" class="nav-item p-0">
+            <a class="nav-link" rel="tooltip" title="go to admin" data-placement="bottom" href="meals/add" >
+              
+              <p class="d-lg-none d-xl-none">Admin</p>
+            </a>
+          </li>
+
           <li id="meals" class="nav-item p-0">
             <a class="nav-link" rel="tooltip" title="meals" data-placement="bottom" href="meals/list" >
               

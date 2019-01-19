@@ -11,7 +11,8 @@ var app = {};
 
 
 app.config = {
-	'sessionToken':false
+	'sessionToken':false,
+	'isAdmin':false
 };
 
 //Container for the AJAX request operations
@@ -196,7 +197,13 @@ app.formResponseProcessor = function(formId,requestPayload,responsePayload){
   	if(savedAlert){
   		savedAlert.style.display = 'block';
   	}
-  	
+  }
+  if(formId == 'createMeal'){
+  	var savedAlert  = document.querySelector("#saved") !=='null' ?document.querySelector("#saved") : false ;
+  	if(savedAlert){
+  		savedAlert.style.display = 'block';
+  	}
+
   }
   };
 
@@ -204,19 +211,30 @@ app.formResponseProcessor = function(formId,requestPayload,responsePayload){
 // Get the session token from localstorage and set it in the app.config object
 app.getToken = function(){
   var stringToken = localStorage.getItem('token');
-
+	
   if(typeof(stringToken) == 'string'){
     try{
       var parsedToken = JSON.parse(stringToken);
       app.config.sessionToken = parsedToken;
-        
+      app.getAdmin();
     }catch(e){
       app.config.sessionToken = false;
     }
   }
 };
 
-
+app.getAdmin = () => {
+	var isAdmin  = localStorage.isAdmin;
+	
+	    try{
+        	var value = JSON.parse(isAdmin);
+        	app.config.isAdmin = value.isAdmin;
+        	document.querySelector('#admin-panel a').href+='?userId='+app.config.sessionToken.userId;
+        }catch(e){
+        	app.config.isAdmin = false;
+        }
+    
+}
 
 // Set the session token in the app.config object as well as localstorage
 app.setSessionToken = function(token){
@@ -278,6 +296,7 @@ app.isLoggedIn = ()=>{
 	var logout =  document.querySelector('#logout');
 	var signUp = document.querySelector('#signup');
 	var cart = document.querySelector('#cart');
+	var admin = document.querySelector('#admin-panel');
 	var accountSettings = document.querySelector('#accountSettings');
 	if(app.config.sessionToken){
 		logout.style.display = 'block';
@@ -287,6 +306,9 @@ app.isLoggedIn = ()=>{
 	}else{
 		login.style.display = 'block';
 		signUp.style.display = 'block';
+	}
+	if(app.config.isAdmin){
+		admin.style.display = 'block';
 	}
 };
 
@@ -308,6 +330,7 @@ app.getCart = () => {
      }
     });
 };
+
 
 
 app.saveCart = items => {
@@ -547,6 +570,24 @@ app.deleteAccount = () => {
 	
 };
 
+//Check if user is Admin 
+app.userIsAdmin = () => {
+	var queryStringObject = {
+		'userId':app.config.sessionToken.userId
+	}
+	//hitting the API
+	app.client.request(undefined,'api/users','GET',queryStringObject,undefined,(status,responsePayload) => {
+		if(status == 200 && responsePayload.isAdmin ){
+			var isAdmin = {'isAdmin':true};
+			var stringValue = JSON.stringify(isAdmin);
+			localStorage.isAdmin = stringValue;
+			}
+	});
+	
+};
+
+
+
 
 
 
@@ -584,6 +625,9 @@ app.deleteAccount();
 
 //binding logout button
 app.logout();
+
+//Checking is user is admin 
+app.userIsAdmin();
 
 // handling all form submissions
   app.bindForms();

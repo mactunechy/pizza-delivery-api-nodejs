@@ -1,0 +1,56 @@
+<div class="container-fluid mt-4">
+            <div class="row mt-4 justify-content-center">
+        <div class="col-md-6 mt-4">
+          <h3 class="h1-seo text-center mt-4">{body.title}</h3>
+          <div id="saved" style="display:none" class="alert alert-success alert-with-icon">
+            <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+              <i class="tim-icons icon-simple-remove"></i>
+            </button>
+            <span data-notify="icon" class="tim-icons icon-bell-55"></span>
+            <span>
+              <b> Done! - </b> Changes were commited successfully</span>
+          </div>
+
+          <div class="card-body">
+          	       <form id="createMeal" class="form" method="POST" action="api/meals">
+          	       	<div id="formError" style="display:none" class="alert alert-warning alert-with-icon">
+            <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+              <i class="tim-icons icon-simple-remove"></i>
+            </button>
+            <span data-notify="icon" class="tim-icons icon-bulb-63"></span>
+            <span id="errorField"></span>
+          </div>
+
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="fa fa-user"></i>
+                        </div>
+                      </div>
+                      <input  type="text" class="form-control" name="title" placeholder="title...">
+                      	</div>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="fa fa-user"></i>
+                        </div>
+                      </div>
+                      <input  type="text" name="description" class="form-control" placeholder="Description...">
+                      	</div>
+													<div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="fa fa-user"></i>
+                        </div>
+                      </div>
+                      <input  type="tel" name="price" class="form-control" placeholder="price...">
+                      	</div>
+                      	                    
+                    <input type="submit" class="btn btn-primary mt-3 btn-block" value="Save">
+                  </form>
+                </div>
+
+        
+      </div>
+      </div>
+    </div>
